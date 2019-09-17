@@ -1,0 +1,34 @@
+run:
+  deadline: 5m
+  skip-dirs:
+    - autogen/.*
+    - vendor/.*
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+  govet:
+    check-shadowing: true
+  gocyclo:
+    min-complexity: 50
+  maligned:
+    suggest-new: true
+  depguard:
+    list-type: blacklist
+    include-go-root: true
+    packages:
+      - github.com/davecgh/go-spew/spew
+  misspell:
+    locale: US
+  lll:
+    line-length: 200
+  funlen:
+    lines: 500
+    statements: 500
+  unparam:
+    algo: cha
+  prealloc:
+    for-loops: true
+linters:
+  enable-all: true
+  disable:
+    - dupl
