@@ -191,8 +191,8 @@ func ExtractElements(bb [][]byte, elements []int) [][]byte {
 		if n-1 < 0 {
 			continue // skip negative index
 		}
-		if n-1 > len(bb) {
-			continue // skip range overflow
+		if n-1 > len(bb) || len(bb) == 0 {
+			continue // index out of range
 		}
 
 		bbf = append(bbf, bb[n-1])
